@@ -96,3 +96,45 @@ $(function () {
 
 
 });
+
+// ---------------------------------------
+
+const diapositivas = document.querySelectorAll('.diapositiva');
+const botonAnterior = document.getElementById('anterior');
+const botonSiguiente = document.getElementById('siguiente');
+let diapositivaActual = 0;
+
+function mostrarDiapositiva(n) {
+    const diapositivas = document.querySelectorAll('.diapositiva');
+    if (n >= diapositivas.length) {
+        diapositivaActual = 0;
+    } else if (n < 0) {
+        diapositivaActual = diapositivas.length - 1;
+    }
+    for (let i = 0; i < diapositivas.length; i++) {
+        diapositivas[i].style.display = 'none';
+    }
+    diapositivas[diapositivaActual].style.display = 'block';
+}
+
+function siguienteDiapositiva() {
+    diapositivaActual++;
+    if (diapositivaActual >= diapositivas.length) {
+        diapositivaActual = 0;
+    }
+    mostrarDiapositiva(diapositivaActual);
+}
+
+function anteriorDiapositiva() {
+    diapositivaActual--;
+    mostrarDiapositiva(diapositivaActual);
+}
+
+document.getElementById('siguiente').addEventListener('click', siguienteDiapositiva);
+document.getElementById('anterior').addEventListener('click', anteriorDiapositiva);
+
+// Iniciar el carrusel después de 15 segundos
+setTimeout(function() {
+    diapositivaActual = 1;
+    mostrarDiapositiva(diapositivaActual);
+}, 15000);

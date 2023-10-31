@@ -602,6 +602,11 @@ button {
      width: 100%;
 }
 
+.mobile_img iframe {
+     width: 25rem;
+     height: 14rem;
+}
+
 .mobile .titlepage .read_more {
      border: #fff solid 3px;
      color: #fff;
@@ -851,3 +856,43 @@ ul.cont li a:hover {
 .our_box figure img {
      width: 100%;
 }
+
+.carrusel {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     height: 300px;
+     width: 80%;
+     margin: 0 auto;
+     overflow: hidden;
+     position: relative;
+ }
+ 
+ .diapositiva {
+     display: none;
+     text-align: center;
+ }
+ 
+ .diapositiva:first-child {
+     display: block;
+ }
+ 
+ .controles {
+     text-align: center;
+     margin-top: 20px;
+ }
+ 
+ .btn {
+     background: #007BFF;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     cursor: pointer;
+     margin: 0 10px;
+ }
+ 
+ .btn:hover {
+     background: #0056b3;
+ }
