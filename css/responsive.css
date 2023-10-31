@@ -216,52 +216,37 @@
 
 /* ------------------ */
 
-@media (hover: hover) and (min-width: 600px) {
-    .card:after {
-         transform: translateY(0);
-    }
+/* Add these CSS rules to your responsive.css file or in a <style> tag within the HTML file */
 
-    .content {
-         transform: translateY(calc(100% - 4.5rem));
+/* For smaller screens, make the .clients cards stack vertically */
+@media (max-width: 768px) {
+    .clients .container.cartas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* Adjust the gap as needed */
     }
-
-    .content>*:not(.title) {
-         opacity: 0;
-         transform: translateY(1rem);
-         transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+  }
+  
+  /* Adjust the card styles for responsiveness */
+  @media (max-width: 768px) {
+    .clients .container .card {
+      text-align: center;
     }
-
-    .card:hover,
-    .card:focus-within {
-         align-items: center;
+  
+    .clients .container .card img {
+      max-width: 100%;
     }
-
-    .card:hover:before,
-    .card:focus-within:before {
-         transform: translateY(-4%);
+  }
+  
+  /* For even smaller screens, reduce the font size of card titles and descriptions */
+  @media (max-width: 480px) {
+    .clients .container .card .card-title {
+      font-size: 16px;
     }
-
-    .card:hover:after,
-    .card:focus-within:after {
-         transform: translateY(-50%);
+  
+    .clients .container .card .card-description {
+      font-size: 14px;
     }
-
-    .card:hover .content,
-    .card:focus-within .content {
-         transform: translateY(0);
-    }
-
-    .card:hover .content>*:not(.title),
-    .card:focus-within .content>*:not(.title) {
-         opacity: 1;
-         transform: translateY(0);
-         transition-delay: calc(var(--d) / 8);
-    }
-
-    .card:focus-within:before,
-    .card:focus-within:after,
-    .card:focus-within .content,
-    .card:focus-within .content>*:not(.title) {
-         transition-duration: 0s;
-    }
-}
+  }
+  
