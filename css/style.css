@@ -437,6 +437,7 @@ button {
 
 .carousel-item img {
      width: 100%;
+     filter: blur(1.5px);
 }
 
 .carousel-caption h1 {
