@@ -311,7 +311,9 @@
     }
 
     .clients .container .card:hover .card-description {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -334,8 +336,10 @@
     }
 
     .clients .container .card .card-description {
-        display: block;
+        display: flex;
         font-size: 1rem;
+        justify-content: center;
+        align-items: center;
     }
 
     .clients .container .card .card-button {
